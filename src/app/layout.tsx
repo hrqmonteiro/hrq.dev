@@ -1,4 +1,13 @@
-import './globals.css'
+import 'windi.css'
+import '../styles/globals.css'
+import { Providers } from './providers'
+import { Roboto } from 'next/font/google'
+import { Container } from 'components/atoms'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900']
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,8 +20,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
-      <body>{children}</body>
+    <html lang='en' suppressHydrationWarning>
+      <body className={roboto.className}>
+        <Providers>
+          <Container>{children}</Container>
+        </Providers>
+      </body>
     </html>
   )
 }
