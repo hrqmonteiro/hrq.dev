@@ -6,7 +6,7 @@ export default defineConfig({
     exclude: ['node_modules', '.git', '.next']
   },
   shortcuts: {
-    icon: 'text-2xl transform translate-y-1'
+    icon: 'text-lg md:text-xl lg:text-2xl transform translate-y-1'
   },
   theme: {
     extend: {

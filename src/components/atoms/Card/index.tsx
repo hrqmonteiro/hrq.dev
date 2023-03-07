@@ -9,7 +9,7 @@ export default function Card({ src, title }: CardProps) {
 
   return (
     <button
-      className='h-92 w-92 lg:h-80 lg:w-80'
+      className='w-82 h-82 lg:h-69 lg:w-69'
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >
@@ -32,7 +32,7 @@ export default function Card({ src, title }: CardProps) {
           hovering ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <ArrowUpRight className='text-white text-sm' />
+        <ArrowUpRight className='text-secondary text-sm' />
       </div>
     </button>
   )

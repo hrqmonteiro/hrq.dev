@@ -13,10 +13,10 @@ const firaCode = Fira_Code({
 
 export default function Home() {
   return (
-    <main className='min-h-screen flex flex-wrap items-center justify-center'>
+    <main className='flex flex-wrap items-center justify-start'>
       <div>
-        <div className='flex justify-start mx-4 my-20 select-none'>
-          <p className='text-2xl'>
+        <div className='min-h-screen-md flex justify-start items-center select-none'>
+          <p className='text-xl md:text-xl lg:text-2xl'>
             <span className='text-tertiary'>Henrique Monteiro</span>.{' '}
             <span className={firaCode.className}>
               <span className='italic'>programming</span>
@@ -50,20 +50,20 @@ export default function Home() {
             .
           </p>
         </div>
-        <div className='mx-4 my-8'>
-          <span className='text-xl'>Work</span>
-        </div>
-        <ul className='flex flex-wrap mt-8 justify-start'>
-          {portfolio.slice(0, 3).map((link: any, index: number) => (
-            <li className='mx-4' key={index}>
-              <NextLink href={link.url} target='_blank' rel='noreferrer'>
-                <Card src={link.img} title={link.name} />
-              </NextLink>
-            </li>
-          ))}
-        </ul>
-        <div className='mx-4 flex justify-end -mt-4 mb-8'>
-          <Link href='/work' size='xl' text='See more' variant='tertiary' />
+        <span className='text-xl'>Work</span>
+        <div>
+          <ul className='flex flex-wrap mt-8 justify-start'>
+            {portfolio.slice(0, 3).map((link: any, index: number) => (
+              <li className='lg:mr-4 lg:my-4' key={index}>
+                <NextLink href={link.url} target='_blank' rel='noreferrer'>
+                  <Card src={link.img} title={link.name} />
+                </NextLink>
+              </li>
+            ))}
+          </ul>
+          <div className='my-8 flex justify-start lg:justify-end'>
+            <Link href='/work' size='xl' text='See more' variant='tertiary' />
+          </div>
         </div>
       </div>
     </main>

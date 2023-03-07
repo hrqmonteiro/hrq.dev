@@ -25,6 +25,11 @@ export const portfolio: Array<object> = [
     url: 'https://laudoaudiovisual.com.br'
   },
   {
+    img: '/portfolio/leorad.png',
+    name: 'LEO',
+    url: 'https://leorad.com.br'
+  },
+  {
     img: '/portfolio/maquinasmonteiro.png',
     name: 'Máquinas Monteiro',
     url: 'https://midascred.com'
