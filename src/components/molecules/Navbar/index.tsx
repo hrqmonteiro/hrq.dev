@@ -35,7 +35,7 @@ export default function Navbar() {
   const [opacityInactive, setOpacityInactive] = useState<string>('opacity-95')
 
   return (
-    <nav className='absolute w-full top-0 py-24 z-10 flex items-center h-20'>
+    <nav className='absolute w-full top-0 my-4 md:my-14 lg:my-24 flex items-center h-20'>
       <Container>
         <ul className='inline-flex items-center justify-end w-full'>
           {socials.map((social: any) => (
