@@ -13,17 +13,20 @@ export default defineConfig({
       backgroundColor: {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
-        tertiary: 'var(--tertiary)'
+        tertiary: 'var(--tertiary)',
+        quartiary: 'var(--quartiary)'
       },
-      border: {
+      borderColor: {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
-        tertiary: 'var(--tertiary)'
+        tertiary: 'var(--tertiary)',
+        quartiary: 'var(--quartiary)'
       },
       textColor: {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
-        tertiary: 'var(--tertiary)'
+        tertiary: 'var(--tertiary)',
+        quartiary: 'var(--quartiary)'
       }
     }
   }

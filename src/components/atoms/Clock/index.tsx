@@ -3,15 +3,24 @@
 import { useEffect, useState } from 'react'
 
 export default function Clock() {
-  const [time, setTime] = useState<Date>(new Date())
+  const [clock, setClock] = useState<Date>(new Date())
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
+    setIsLoading(true)
+
     const timeId = setInterval(() => {
-      setTime(new Date())
+      setClock(new Date())
     }, 1000)
 
-    return () => clearInterval(timeId)
-  }, [time])
+    setIsLoading(false)
 
-  return <div>{time.toLocaleTimeString('pt-br', { hour12: false })}</div>
+    return () => clearInterval(timeId)
+  }, [])
+
+  return isLoading ? null : (
+    <span className='text-sm'>
+      São Paulo, Brazil · {clock.toLocaleTimeString('pt-br', { hour12: true })}
+    </span>
+  )
 }

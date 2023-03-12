@@ -3,7 +3,7 @@ import '../styles/globals.css'
 import { Providers } from './providers'
 import { Roboto } from 'next/font/google'
 import { Container } from 'components/atoms'
-import { Footer } from 'components/molecules'
+import { Footer, Navbar } from 'components/molecules'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -24,7 +24,8 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={roboto.className}>
         <Providers>
-          <Container>{children}</Container>
+          <Navbar />
+          <div className='px-6'>{children}</div>
           <Footer />
         </Providers>
       </body>

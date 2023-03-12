@@ -2,10 +2,12 @@
   --primary: #ffffff;
   --secondary: #1a1a1a;
   --tertiary: #6f6f6f;
+  --quartiary: #858585;
 }
 
 [data-theme='dark'] {
   --primary: #1a1a1a;
   --secondary: #e5e5e5;
   --tertiary: #a0a0a0;
+  --quartiary: #7e7e7e;
 }

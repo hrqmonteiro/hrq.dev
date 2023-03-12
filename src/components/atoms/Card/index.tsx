@@ -9,7 +9,7 @@ export default function Card({ src, title }: CardProps) {
 
   return (
     <button
-      className='w-82 h-82 lg:h-69 lg:w-69'
+      className='w-82 h-82 lg:w-58 lg:h-58'
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
     >

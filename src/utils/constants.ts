@@ -45,3 +45,18 @@ export const portfolio: Array<object> = [
     url: 'https://minu.biz'
   }
 ]
+
+export const socials: Array<object> = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com'
+  },
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com/hrqmonteiro'
+  },
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com/hrqmonteiro'
+  }
+]
