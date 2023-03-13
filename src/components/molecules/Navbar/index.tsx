@@ -30,7 +30,6 @@ const socials: Array<object> = [
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState<string>('')
-  const [siblingActiveLink, setSiblingActiveLink] = useState<string>('')
   const [opacityActive, setOpacityActive] = useState<string>('opacity-95')
   const [opacityInactive, setOpacityInactive] = useState<string>('opacity-95')
 

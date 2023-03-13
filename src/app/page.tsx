@@ -3,35 +3,76 @@
 import s from './page.module.css'
 import NextLink from 'next/link'
 import { Fira_Code } from 'next/font/google'
-import { Card, Link, Socials } from 'components/atoms'
+import { Card, Link } from 'components/atoms'
 import { Buildings, Cube, Flask, PenNib, Stack } from 'phosphor-react'
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue
+} from 'framer-motion'
 import { portfolio } from 'utils/constants'
+import { useEffect, useRef } from 'react'
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
   style: ['normal']
 })
 
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [0, -distance])
+}
+
 export default function Home() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({ target: ref })
+  const x = useParallax(scrollYProgress, 300)
+
   return (
     <main className='flex flex-wrap items-center justify-center'>
-      <div>
-        <div className='min-h-screen flex flex-wrap content-center'>
-          <div className='container max-w-screen-md mx-auto px-6 flex justify-start'>
-            <h1 className='text-xl md:text-4xl lg:text-4xl font-medium'>
-              Henrique Monteiro.
-            </h1>
-          </div>
-          <div className='w-full flex flex-wrap justify-center'>
-            <h2 className='w-full text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-10xl flex flex-nowrap justify-start md:justify-start lg:justify-center font-extrabold my-10'>
+      <div className='min-h-screen flex flex-wrap content-center'>
+        <div className='container max-w-screen-md mx-auto px-6 flex justify-start'>
+          <motion.h1
+            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: -50, opacity: 0 }}
+            className='text-xl md:text-4xl lg:text-4xl font-medium'
+            transition={{ duration: 2.0, delay: 0, type: 'spring' }}
+          >
+            Henrique Monteiro.
+          </motion.h1>
+        </div>
+        <div className='w-full flex flex-wrap justify-center'>
+          <div>
+            <motion.h2
+              animate={{ x: 0, opacity: 1 }}
+              className='w-full text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-10xl flex flex-nowrap justify-start md:justify-start lg:justify-center font-extrabold my-10'
+              initial={{ x: -1000, opacity: 0 }}
+              style={{ x }}
+              transition={{
+                duration: 2.0,
+                delay: 0,
+                type: 'spring'
+              }}
+            >
               full stack developer
-            </h2>
+            </motion.h2>
           </div>
-          <div className='container max-w-screen-md mx-auto px-6 flex justify-start'>
-            <div className='text-justify text-xl md:text-xl lg:text-2xl'>
-              <div className='text-quartiary font-medium text-xs uppercase mb-6'>
-                TL;DR
-              </div>
+        </div>
+        <div className='container max-w-screen-md mx-auto px-6 flex justify-start'>
+          <motion.div
+            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: 500, opacity: 0 }}
+            transition={{
+              duration: 2.0,
+              delay: 0,
+              type: 'spring'
+            }}
+          >
+            <div className='text-quartiary font-medium text-xs uppercase mb-6'>
+              TL;DR
+            </div>
+            <p className='text-justify text-xl lg:Text-2xl'>
               I&apos;m a{' '}
               <span className={firaCode.className}>
                 <span className='italic'>programming</span>
@@ -62,23 +103,23 @@ export default function Home() {
                 variant='tertiary'
               />
               .
-            </div>
-          </div>
+            </p>
+          </motion.div>
         </div>
-        {/* <div>
-          <ul className='flex flex-wrap mt-8 justify-start'>
-            {portfolio.slice(0, 4).map((link: any, index: number) => (
-              <li className={s.card} key={index}>
-                <NextLink href={link.url} target='_blank' rel='noreferrer'>
-                  <Card src={link.img} title={link.name} />
-                </NextLink>
-              </li>
-            ))}
-          </ul>
-          <div className='my-8 flex justify-start lg:justify-end'>
-            <Link href='/work' size='xl' text='See more' variant='tertiary' />
-          </div>
-        </div> */}
+      </div>
+      <div>
+        <ul className='flex flex-wrap mt-8 justify-start'>
+          {portfolio.slice(0, 4).map((link: any, index: number) => (
+            <li className={s.card} key={index}>
+              <NextLink href={link.url} target='_blank' rel='noreferrer'>
+                <Card src={link.img} title={link.name} />
+              </NextLink>
+            </li>
+          ))}
+        </ul>
+        <div className='my-8 flex justify-start lg:justify-end'>
+          <Link href='/work' size='xl' text='See more' variant='tertiary' />
+        </div>
       </div>
     </main>
   )
