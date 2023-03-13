@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Container } from 'components/atoms'
 import { GithubLogo, InstagramLogo, LinkedinLogo } from 'phosphor-react'
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 
 const socials: Array<object> = [
   {
@@ -35,16 +34,7 @@ export default function Navbar() {
   const [opacityInactive, setOpacityInactive] = useState<string>('opacity-95')
 
   return (
-    <motion.nav
-      animate={{ y: 0, opacity: 1 }}
-      className='absolute w-full top-0 my-4 md:my-14 lg:my-24 flex items-center h-20'
-      initial={{ y: 100, opacity: 0 }}
-      transition={{
-        duration: 3,
-        delay: 0,
-        type: 'spring'
-      }}
-    >
+    <nav className='absolute w-full top-0 my-4 md:my-14 lg:my-24 flex items-center h-20'>
       <Container>
         <ul className='inline-flex items-center justify-end w-full'>
           {socials.map((social: any) => (
@@ -72,6 +62,6 @@ export default function Navbar() {
           ))}
         </ul>
       </Container>
-    </motion.nav>
+    </nav>
   )
 }

@@ -3,21 +3,14 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import {
-  CodepenLogo,
-  DribbbleLogo,
-  FigmaLogo,
   GithubLogo,
-  GitlabLogo,
   InstagramLogo,
   LinkedinLogo,
-  RedditLogo,
   TwitchLogo,
   TwitterLogo,
   YoutubeLogo
 } from 'phosphor-react'
-import { TbBrandLastfm } from 'react-icons/tb'
 import { SlSocialSteam } from 'react-icons/sl'
-import { RiMastodonLine } from 'react-icons/ri'
 
 const socials: Array<object> = [
   {

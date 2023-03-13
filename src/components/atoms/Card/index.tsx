@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'phosphor-react'
 import { useState } from 'react'
 import type { CardProps } from './types'
 
-export default function Card({ src, title }: CardProps) {
+export default function Card({ src }: CardProps) {
   const [hovering, setHovering] = useState<boolean>(false)
 
   return (

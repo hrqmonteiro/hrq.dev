@@ -2,7 +2,6 @@ import 'windi.css'
 import '../styles/globals.css'
 import { Providers } from './providers'
 import { Roboto } from 'next/font/google'
-import { Container } from 'components/atoms'
 import { Footer, Navbar } from 'components/molecules'
 
 const roboto = Roboto({

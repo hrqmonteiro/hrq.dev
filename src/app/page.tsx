@@ -1,19 +1,13 @@
 'use client'
 
+import { useRef } from 'react'
 import s from './page.module.css'
 import NextLink from 'next/link'
 import { Fira_Code } from 'next/font/google'
 import { Card, Link } from 'components/atoms'
 import { Buildings, Cube, Flask, PenNib, Stack } from 'phosphor-react'
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue
-} from 'framer-motion'
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
 import { portfolio } from 'utils/constants'
-import { useEffect, useRef } from 'react'
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
@@ -35,7 +29,7 @@ export default function Home() {
         <div className='container max-w-screen-md mx-auto px-6 flex justify-start'>
           <motion.h1
             animate={{ y: 0, opacity: 1 }}
-            initial={{ y: -50, opacity: 0 }}
+            initial={{ y: 100, opacity: 0 }}
             className='text-xl md:text-4xl lg:text-4xl font-medium'
             transition={{ duration: 3, delay: 0, type: 'spring' }}
           >
