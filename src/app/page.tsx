@@ -37,7 +37,7 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             initial={{ y: -50, opacity: 0 }}
             className='text-xl md:text-4xl lg:text-4xl font-medium'
-            transition={{ duration: 2.0, delay: 0, type: 'spring' }}
+            transition={{ duration: 3, delay: 0, type: 'spring' }}
           >
             Henrique Monteiro.
           </motion.h1>
@@ -50,7 +50,7 @@ export default function Home() {
               initial={{ x: -1000, opacity: 0 }}
               style={{ x }}
               transition={{
-                duration: 2.0,
+                duration: 3,
                 delay: 0,
                 type: 'spring'
               }}
@@ -64,7 +64,7 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             initial={{ y: 500, opacity: 0 }}
             transition={{
-              duration: 2.0,
+              duration: 3,
               delay: 0,
               type: 'spring'
             }}
