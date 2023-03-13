@@ -45,13 +45,13 @@ export default function Home() {
         <div className='w-full flex flex-wrap justify-center'>
           <div>
             <motion.h2
-              animate={{ x: 0, opacity: 1 }}
+              animate={{ opacity: 1 }}
               className='w-full text-4xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-10xl flex flex-nowrap justify-start md:justify-start lg:justify-center font-extrabold my-10'
-              initial={{ x: -1000, opacity: 0 }}
+              initial={{ opacity: 0 }}
               style={{ x }}
               transition={{
                 duration: 3,
-                delay: 0,
+                delay: 2,
                 type: 'spring'
               }}
             >
